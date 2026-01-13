@@ -14,7 +14,7 @@ export default class Environment {
 		}
 
 		this.setSunlight()
-		this.setEnvironmentMap()
+		// this.setEnvironmentMap()
 	}
 
 	setSunlight() {
@@ -26,30 +26,34 @@ export default class Environment {
 		this.sunlight.position.set(3.5, 2, - 1.25)
 		this.scene.add(this.sunlight)
 
+		this.helper = new THREE.DirectionalLightHelper(this.sunlight, 0.5)
+		this.scene.add(this.helper)
+
 		if (this.debug.active) {
 			this.debugFolder.add(this.sunlight, 'intensity')
-			.name('Sunlight Intensity')
-			.min(0)
-			.max(10)
-			.step(0.001)
+				.name('Sunlight Intensity')
+				.min(0)
+				.max(10)
+				.step(0.001)
 
 			this.debugFolder.add(this.sunlight.position, 'x')
-			.name('Sunlight Position X')
-			.min(-5)
-			.max(5)
+				.name('Sunlight Position X')
+				.min(-5)
+				.max(5)
 				.step(0.001)
-			
+
 			this.debugFolder.add(this.sunlight.position, 'y')
-			.name('Sunlight Position Y')
-			.min(-5)
-			.max(5)
-			.step(0.001)
+				.name('Sunlight Position Y')
+				.min(-5)
+				.max(5)
+				.step(0.001)
 
 			this.debugFolder.add(this.sunlight.position, 'z')
-			.name('Sunlight Position Z')
-			.min(-5)
-			.max(5)
-			.step(0.001)
+				.name('Sunlight Position Z')
+				.min(-5)
+				.max(5)
+				.step(0.001)
+
 		}
 	}
 
@@ -77,11 +81,11 @@ export default class Environment {
 		if (this.debug.active) {
 			this.debugFolder
 				.add(this.environmentMap, 'intensity')
-			.name('envMapIntensity')
-			.min(0)
-			.max(5)
-			.step(0.001)
-			.onChange(this.environmentMap.updateMaterials)
+				.name('envMapIntensity')
+				.min(0)
+				.max(5)
+				.step(0.001)
+				.onChange(this.environmentMap.updateMaterials)
 		}
 	}
 }
