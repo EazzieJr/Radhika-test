@@ -1,13 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code structuring</title>
+    <title>The Fawn</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <canvas class="webgl"></canvas>
+
+<body class="bg-black">
+    <canvas class="webgl fixed outline-none inset-0 z-20"></canvas>
+
+    <div
+        class="Loader w-full h-screen flex flex-col items-center justify-center opacity-0 pointer-events-none pt-[10vh] absolute inset-0">
+        <span class="uppercase text-[60px] lg:text-[4vw] text-white leading-none">
+            The fawn
+        </span>
+
+        <p class="text-white font-inter-tight center">
+            A random fact about a fawn relating to the current action
+        </p>
+    </div>
+
+    <div class="Sections opacity-0">
+        <section class="Section" id="walk">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        First Steps
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        Within just 30 minutes of birth, a fawn is already finding its footing. By their second day,
+                        they can walk gracefully
+                        enough to follow their mother through dense brush.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="Section" id="jump">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        Defying Gravity
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        This "bouncy" jumping is sometimes called stotting or pronking. It’s a signal to predators that
+                        the fawn is healthy and
+                        energetic—basically saying, "Don't bother chasing me, I'm too fast!"
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="swim">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        Natural Mariners
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        Deer are surprisingly excellent swimmers. Their hair is hollow, which acts like a built-in life
+                        jacket by providing
+                        extra buoyancy while they navigate streams or lakes.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="sit">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        The Art of Hiding
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        When a fawn sits, it is often practicing "bedding down." They are coached by their mothers to
+                        stay perfectly still to
+                        avoid the gaze of passing predators.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="stand">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        Built for Independence
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        Fawns are "precocial" animals, meaning they are born in an advanced state. Standing up quickly
+                        is a survival evolution
+                        to ensure they don't remain vulnerable on the forest floor for too long.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="run">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        High-Speed Agility
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        Even at a young age, fawns can reach speeds of up to 30 miles per hour. They often run in a
+                        zigzag pattern to confuse
+                        anything chasing them.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="lying">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        Invisible & Scentless
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        For the first few weeks of life, fawns have virtually no body scent. By lying still in tall
+                        grass, they become
+                        "invisible" to the noses of wolves and coyotes.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="attack">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        Spirited Defense
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        While they prefer to hide, a cornered fawn will use its front hooves to strike. This "flailing"
+                        motion is surprisingly
+                        sharp and serves as a last-resort defense mechanism.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Section" id="idle">
+            <div class="Container">
+                <div class="Title">
+                    <h2>
+                        Always Alert
+
+                    </h2>
+                </div>
+
+                <div class="Text">
+                    <p>
+                        Even when "doing nothing," a fawn's ears are constantly rotating independently. They can track
+                        sounds from different
+                        directions without even moving their heads.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <script type="module" src="./script.js"></script>
 </body>
+
 </html>

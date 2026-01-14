@@ -10,7 +10,6 @@ export default class world {
 		this.scene = this.experience.scene
 		this.resources = this.experience.resources
 
-
 		this.resources.on('ready', () => {
 			// Setup
 			// this.floor = new Floor()

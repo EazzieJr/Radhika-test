@@ -1,19 +1,31 @@
-*
-{
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+	--default-font-family: "Bebas Neue", sans-serif;
+	--font-inter-tight: "Inter Tight", sans-serif;
 }
 
-html,
-body
-{
-    overflow: hidden;
+.Section {
+	@apply w-full h-screen px-[10vw] py-[5vh] space-y-[2vh];
 }
 
-.webgl
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
+.Container {
+	@apply size-full flex flex-col items-end justify-between;
+}
+
+.Title {
+	@apply w-full;
+}
+
+.Title h2 {
+	@apply text-white uppercase text-[10vw] leading-none;
+}
+
+.Text {
+	@apply w-[320px];
+}
+
+.Text p {
+	@apply text-white font-inter-tight;
 }
