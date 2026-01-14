@@ -19,14 +19,14 @@ export default class Fawn {
 		this.walkSpeed = -1;
 		this.cameraAngles = {
 			walk: { x: 4, y: 1, z: 3 },
-			jump: { x: -2.5, y: 2, z: 8 },
-			swim: { x: 0, y: -1, z: 9 },
+			jump: { x: 4, y: 3, z: 3 },
+			swim: { x: 0, y: 0, z: 2},
 			sit: { x: 1.5, y: 0.5, z: 8.5 },
-			stand: { x: -1.5, y: 0.5, z: 8.5 },
-			run: { x: 3.5, y: 1, z: 9.5 },
-			lying: { x: 1, y: -0.5, z: 8 },
-			attack: { x: -3, y: 1, z: 8 },
-			idle: { x: 0, y: 0, z: 10 },
+			stand: { x: 10, y: 1, z: -7 },
+			run: { x: 3.5, y: 1, z: 3 },
+			lying: { x: 1, y: -0.5, z: 5 },
+			attack: { x: 0.9, y: 1, z: 3 },
+			idle: { x: 0, y: 0, z: 3 },
 		}
 
 		// Setup
@@ -178,7 +178,7 @@ export default class Fawn {
 					trigger: section,
 					start: 'top 1%',
 					end: 'bottom 1%',
-					markers: true,
+					markers: false,
 					onEnter: () => {
 						tl.restart(true)
 					},
@@ -217,25 +217,29 @@ export default class Fawn {
 				},
 			}, 0)
 
-			const id = section.getAttribute('id')
-			const camTarget = this.cameraAngles[id] || this.cameraAngles.idle
-
-			gsap.to(this.camera.position, {
+			const camTl = gsap.timeline({
 				scrollTrigger: {
 					trigger: section,
 					start: 'top 1%',
 					end: 'bottom 1%',
 					scrub: true,
-					markers: true,
+					markers: false,
 					pin: section,
 					pinSpacing: false,
 					onEnter: () => {
+						console.log(camTarget)
 						this.animation.play(id)
 					},
 					onEnterBack: () => {
 						this.animation.play(id)
 					}
-				},
+				}
+			})
+
+			const id = section.getAttribute('id')
+			const camTarget = this.cameraAngles[id] || this.cameraAngles.idle
+
+			camTl.to(this.camera.position,{
 				x: camTarget.x,
 				y: camTarget.y,
 				z: camTarget.z
@@ -264,8 +268,6 @@ export default class Fawn {
 			},
 		})
 	}
-
-
 
 	update() {
 		this.animation.mixer.update(this.time.delta / 1000)
